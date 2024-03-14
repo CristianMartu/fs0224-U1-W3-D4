@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tombola!</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TOMBOLA</h1>
+    </header>
+    <main>
+      <form id="start">
+        <button type="submit">Premi per iniziare!</button>
+        <!-- <label>Numero uscito</label> -->
+        <button type="button" id="btn">Premi per continuare</button>
+      </form>
+      <div id="board-game"></div>
+      <div id="table-players">
+        <div>
+          <h2>Crea cartelle</h2>
+          <input type="number" value="1" min="0" />
+          <button id="add-table" type="button">
+            <i class="fas fa-plus"> </i>
+          </button>
+        </div>
+        <div id="table-conteiner"></div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="assets/index.js"></script>
+  </body>
+</html>
