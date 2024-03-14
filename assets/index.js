@@ -3,14 +3,32 @@ const tablePosition = document.getElementById('table-conteiner')
 const counterPosition = document.getElementById('btn')
 counterPosition.hidden = true
 
-const createCell = (numeri, position, order = true) => {
-  for (let i = 0; i < numeri; i++) {
+const listNumber = []
+const createRandomNumber = (number) => {
+  const listNumber = []
+  let i = 0
+  while (i < number) {
+    const random = Math.floor(Math.random() * 77)
+    const search = listNumber.includes(random)
+    if (!search) {
+      listNumber.push(random)
+      i++
+    }
+  }
+  return listNumber
+}
+
+const createCell = (numberCells, position, order = true) => {
+  for (let i = 0; i < numberCells; i++) {
     const cell = document.createElement('div')
     cell.classList.add('cell')
     if (order) {
       cell.innerText = i + 1
     } else {
-      cell.innerText = Math.floor(Math.random() * 77)
+      const listRandomNumber = createRandomNumber(numberCells)
+      listRandomNumber.forEach((element) => {
+        cell.innerText = element
+      })
     }
     position.appendChild(cell)
   }
@@ -46,10 +64,11 @@ const searchNum = (number) => {
 const startGame = (e) => {
   e.preventDefault()
   counterPosition.hidden = false
-
+  // document.getElementById('btn-start').innerText = 'Premi =>'
+  document.getElementById('btn-start').hidden = true
   counterPosition.addEventListener('click', (changeNumber) => {
     const randomNumber = Math.floor(Math.random() * 77)
-    counterPosition.innerText = randomNumber
+    counterPosition.innerText = 'Numero: ' + randomNumber
     searchNum(randomNumber)
   })
 }
